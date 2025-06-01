@@ -29,10 +29,28 @@ navLink.forEach(n=> n.addEventListener('click', linkAction))
 
 
 /*=============== SWIPER HOME ===============*/ 
+const swiperHome = new Swiper('.home__swiper', {
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        renderBullet: (index, className)=> {
+          return '<span class="' + className + '">' + String(index + 1).padStart(2,'0') + "</span>";
+        },
+    },
 
+    // autoplay: {
+    //     delay: 5000,
+    // }
+})
 
 /*=============== CHANGE BACKGROUND HEADER ===============*/
-
+const scrollHeader = () => {
+    const header = document.getElementById('header')
+    //add the scroll-header class to the header when the scroll is greater than 50
+    this.scrollY >= 50 ? header.classList.add('bg-header')
+                     : header.classList.remove('bg-header')
+}
+window.addEventListener('scroll', scrollHeader)
 
 /*=============== SHOW SCROLL UP ===============*/ 
 
