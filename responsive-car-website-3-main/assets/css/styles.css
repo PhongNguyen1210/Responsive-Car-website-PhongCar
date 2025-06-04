@@ -346,10 +346,81 @@ video {
   color: var(--black-color);
 }
 /*=============== BUTTON ===============*/
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: .5rem;
+  background-color: var(--first-color);
+  padding: .75rem 1.25rem;
+  color: var(--black-color);
+  font-weight: var(--font-semi-bold);
+  box-shadow: 0 4px 2px hsla(43, 88%, 32%, .4);
+}
 
+.button i {
+  font-weight: initial;
+  font-size: 1.5rem;
+  transition: transform .4s;
+}
+
+.button:hover i {
+  transform: translateX(.5rem);
+}
+
+.button__ghost{
+  background-color: transparent;
+  box-shadow: none;
+  border: 2px solid var(--white-color);
+  color: var(--white-color);
+}
 
 /*=============== ABOUT ===============*/
+.about{
+  background-color: var(--body-second-color);
+}
 
+.about__container {
+  padding-bottom: 3rem;
+  row-gap: 2rem;
+}
+
+.about__title{
+  color: var(--white-color);
+  margin-bottom: 1.5rem;
+}
+
+.about__title span{
+  color: var(--black-color)
+}
+
+.about__data{
+  text-align: center;
+}
+
+.about__description{
+  color: var(--white-color);
+  margin-bottom: 1.5rem;
+}
+
+.about__video{
+  position: relative;
+  width: 250px;
+  height: 320px;
+  justify-self: center;
+  box-shadow: var(--shadow-img);
+  transform: skew(-12deg);
+  display: grid;
+  overflow: hidden;
+}
+
+.about__file{
+  position: absolute;
+  height: 320px;
+  transform: skew(12deg);
+  max-width: initial;
+  justify-self: center;
+}
 
 /*=============== MODELS ===============*/
 

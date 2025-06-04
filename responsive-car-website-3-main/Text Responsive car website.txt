@@ -106,4 +106,4 @@ https://www.instagram.com/
 https://twitter.com/
 
 .footer__copy
-&#169; All Rights Reserved By Bedimcode
+&#169; All Rights Reserved By PhongNguyen
