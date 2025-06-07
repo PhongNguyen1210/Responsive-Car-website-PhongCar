@@ -53,9 +53,56 @@ const scrollHeader = () => {
 window.addEventListener('scroll', scrollHeader)
 
 /*=============== SHOW SCROLL UP ===============*/ 
+const scrollUp = () =>{
+	const scrollUp = document.getElementById('scroll-up')
+    // When the scroll is higher than 350 viewport height, add the show-scroll class to the a tag with the scrollup class
+	this.scrollY >= 350 ? scrollUp.classList.add('show-scroll')
+						: scrollUp.classList.remove('show-scroll')
+}
+window.addEventListener('scroll', scrollUp)
 
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+const sections = document.querySelectorAll('section[id]')
+    
+const scrollActive = () =>{
+  	const scrollDown = window.scrollY
 
+	sections.forEach(current =>{
+		const sectionHeight = current.offsetHeight,
+			  sectionTop = current.offsetTop - 58,
+			  sectionId = current.getAttribute('id'),
+			  sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
+
+		if(scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight){
+			sectionsClass.classList.add('active-link')
+		}else{
+			sectionsClass.classList.remove('active-link')
+		}                                                    
+	})
+}
+window.addEventListener('scroll', scrollActive)
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
+const sr = ScrollReveal({
+  origin: 'top',
+  distance: '60px',
+  duration: 2000,
+  delay: 300,
+//   reset: true //animation repeat
+});
+
+sr.reveal('.home__bg', {scale: 1.1, opacity: 1});
+sr.reveal('.home__swiper', {origin: 'right', distance: '300px', delay: 800});
+sr.reveal('.home__data', {origin: 'bottom', distance: '120px', delay: 1800});
+sr.reveal('.swiper-pagination-bullet', {origin: 'top', delay: 1800, opacity: 0});
+sr.reveal('.home__button', {origin: 'top', delay: 2200});
+sr.reveal('.about__data, .contact__content', {origin: 'left'});
+sr.reveal('.about__video, .contact__img', {origin: 'right'});
+sr.reveal('.models__card', {interval: 100});
+sr.reveal('.info__img', {distance: '120px'});
+sr.reveal('.info__number', {origin: 'bottom', distance: '80px', delay: 800});
+sr.reveal('.info__group', {interval: 100, delay: 1300});
+sr.reveal('.footer__container');
+
+
